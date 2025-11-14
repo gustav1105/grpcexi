@@ -1,0 +1,32 @@
+syntax = "proto3";
+package contact;
+
+option go_package = "/";
+
+enum PhoneType {
+  CELL = 0;
+  WORK = 1;
+  HOME = 2;
+}
+
+message PhoneNumber {
+  string digits = 1;
+  PhoneType type = 2;
+}
+
+message Contact {
+  string name = 1;
+  repeated PhoneNumber phones = 2;
+}
+
+message All {}
+
+message Contacts {
+  repeated Contact contacts = 1;
+}
+
+service ContactService {
+  rpc getContacts(All) returns (stream Contacts);
+  rpc addContact(Contact) returns (Contact);
+}
+
