@@ -9,3 +9,7 @@ The project demonstrates a clean separation between gRPC services, TUI, and hand
 - Support for multiple phone numbers per contact
 - Terminal UI (TUI) with sidebar, forms, and tables
 - gRPC client-server communication
+
+## Instructions
+- go run cmd/main.go (server)
+- go run client/cmd/main.go (client tui)
